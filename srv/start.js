@@ -9,6 +9,7 @@ var app = express();
 app.use("/js", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js")));
 app.use("/js", express.static(path.join(__dirname, "../node_modules/jquery/dist")));
 app.use("/js", express.static(path.join(__dirname, "../node_modules/angular")));
+app.use("/js", express.static(path.join(__dirname, "../node_modules/chart.js/dist")));
 app.use("/js", express.static(path.join(__dirname, "../src/js")));
 
 app.use("/content", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
