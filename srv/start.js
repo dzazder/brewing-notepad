@@ -8,8 +8,13 @@ var app = express();
 //prepare server
 app.use("/js", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js")));
 app.use("/js", express.static(path.join(__dirname, "../node_modules/jquery/dist")));
+app.use("/js", express.static(path.join(__dirname, "../node_modules/angular")));
+app.use("/js", express.static(path.join(__dirname, "../src/js")));
+
 app.use("/content", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
-app.use("/templates", express.static(path.join(__dirname, "../templates")));
+app.use("/content", express.static(path.join(__dirname, "../content")));
+
+app.use("/templates", express.static(path.join(__dirname, "../src/templates")));
 
 
 app.get('/', function (req, res) {

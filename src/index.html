@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/content/bootstrap.min.css">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="/js/BrewingNotepad.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,8 +21,9 @@
     <![endif]-->
 </head>
 
-<body>
-    <div class="col-md-3 left-col" ng-include="'/templates/leftcolmenu.html">
+<body ng-controller="BrewingNotepadController">
+
+    <div class="col-md-3 left-col" ng-include="'/templates/leftcolmenu.html'">
     </div>
 
     <div class="col-md-9 right-col" ng-include="'/templates/maincontent.html'">
