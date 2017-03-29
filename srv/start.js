@@ -12,7 +12,7 @@ app.use("/js", express.static(path.join(__dirname, "../node_modules/angular")));
 app.use("/js", express.static(path.join(__dirname, "../src/js")));
 
 app.use("/content", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
-app.use("/content", express.static(path.join(__dirname, "../content")));
+app.use("/content", express.static(path.join(__dirname, "../src/content")));
 
 app.use("/templates", express.static(path.join(__dirname, "../src/templates")));
 

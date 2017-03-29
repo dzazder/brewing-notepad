@@ -1,0 +1,18 @@
+.batch-container {
+    border: 1px solid red;
+    padding: 10px;
+}
+.batch-container .title-container {
+    margin-bottom: 40px;
+}
+
+.batch-container .title {
+    font-size: 24px;
+    display: block;
+}
+
+.batch-container .subtitle {
+    font-size: 16px;
+    display: block;
+}
+

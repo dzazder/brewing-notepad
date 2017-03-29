@@ -1,6 +1,30 @@
-<h2>Batch</h2>
-<h3>Name: {{brewery.currentBatch.name}}</h3>
+<div class="container batch-container">
+    <div class="row">
+        <div class="col-md-12 title-container">
+            <span class="title">{{brewery.currentBatch.name}}</span>
+            <span class="subtitle">{{brewery.currentBatch.styleName}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 batch-data">
+            <form>
+                <div class="form-group">
+                    <label for="batchBlg">Gravity</label>
+                    <input id="batchBlg" type="number" class="form-control" value="{{brewery.currentBatch.blg}}">
 
-<p>
-    
-</p>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    wykres 1
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    wykres 2
+                </div>
+            </div>
+        </div>
+    </div>
