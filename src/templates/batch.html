@@ -7,13 +7,29 @@
     </div>
     <div class="row">
         <div class="col-md-4 batch-data">
-            <form>
-                <div class="form-group">
-                    <label for="batchBlg">Gravity</label>
-                    <input id="batchBlg" type="number" class="form-control" value="{{brewery.currentBatch.blg}}">
-
-                </div>
-            </form>
+            <div class="row title">
+                Batch info
+            </div>
+            <div class="row content">
+                <form>
+                    <div class="form-inline form-group">
+                        <label for="batchBrewingDate">Brewing date</label>
+                        <input id="batchBrewingDate" type="date" class="form-control" value="{{brewery.currentBatch.brewingDate}}">
+                    </div>
+                    <div class="form-inline form-group">
+                        <label for="batchBottlingDate">Bottling date</label>
+                        <input id="batchBottlingDate" type="date" class="form-control" value="{{brewery.currentBatch.bottlingDate}}">
+                    </div>
+                    <div class="form-inline form-group">
+                        <label for="batchOG">Original gravity</label>
+                        <input id="batchOG" type="number" class="form-control" value="{{brewery.currentBatch.og}}">
+                    </div>
+                    <div class="form-inline form-group">
+                        <label for="batchFG">Final gravity</label>
+                        <input id="batchFG" type="number" class="form-control" value="{{brewery.currentBatch.fg}}">
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="col-md-8">
             <div class="row">

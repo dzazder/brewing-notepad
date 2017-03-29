@@ -21,7 +21,6 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function ($s
         }
     ];
 
-    $scope.currentPage = 1;
 
     $scope.changePage = function (id, idInternal) {
         $scope.currentPage = id;
@@ -53,7 +52,11 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function ($s
             name: "English breakfast",
             styleId: 1,
             styleName: "English Pale Ale",
-            blg: 12
+            og: 12,
+            fg: 4,
+            brewingDate: '2016-01-01',
+            bottlingDate: '2016-01-21'
+
         },
         {
             id: 2,
@@ -82,4 +85,8 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function ($s
             }
         }
     }
+
+    
+    // test data
+    $scope.currentPage = 2;
 }])
