@@ -1,0 +1,7 @@
+<h2>Your batches</h2>
+
+<ul ng-repeat="batch in brewery.batches">
+    <li>
+        <a href="#" ng-click="changePage(21, batch.id)">{{batch.name}}</span>
+    </li>
+</ul>

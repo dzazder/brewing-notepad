@@ -1,5 +1,85 @@
 var brewingNotepadApp = angular.module('brewingNotepadApp', []);
 
-brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function($scope) {
-    $scope.hello = "Hello world";
+brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function ($scope) {
+    $scope.menu = [
+        {
+            id: 1,
+            label: "Main page",
+            src: "main.html",
+            showInMenu: true
+        },
+        {
+            id: 2,
+            label: "Yours batches",
+            src: "batches.html",
+            showInMenu: true
+        },
+        {
+            id: 21,
+            label: "Batch",
+            src: "batch.html",
+        }
+    ];
+
+    $scope.currentPage = 1;
+
+    $scope.changePage = function (id, idInternal) {
+        $scope.currentPage = id;
+        if (idInternal) {
+            switch ($scope.currentPage) {
+                case 2:
+                case 21:
+                    $scope.breweryPage.currentBatch = idInternal;
+                    $scope.brewery.selectBatch(idInternal);
+                    break;
+            }
+        }
+    }
+
+    $scope.getCurrentPageSrc = function () {
+        for (var i = 0; i < $scope.menu.length; i++) {
+            if ($scope.menu[i].id === $scope.currentPage) {
+                return $scope.menu[i].src;
+            }
+        }
+
+        return "main.html";
+    }
+
+    $scope.brewery = {}
+    $scope.brewery.batches = [
+        {
+            id: 1,
+            name: "English breakfast",
+            styleId: 1,
+            styleName: "English Pale Ale",
+            blg: 12
+        },
+        {
+            id: 2,
+            name: "Tropical Joke",
+            styleId: 2,
+            styleName: "American Pale Ale",
+            blg: 14
+        },
+        {
+            id: 3,
+            name: "Great Ivan",
+            styleId: 3,
+            styleName: "Russian Imperial Stout",
+            blg: 24
+        }
+    ]
+
+    $scope.breweryPage = {};
+    $scope.breweryPage.currentBatch = 1;
+
+    $scope.brewery.currentBatch = undefined;
+    $scope.brewery.selectBatch = function (id) {
+        for (var i = 0; i < $scope.brewery.batches.length; i++) {
+            if ($scope.breweryPage.currentBatch === $scope.brewery.batches[i].id) {
+                $scope.brewery.currentBatch = $scope.brewery.batches[i];
+            }
+        }
+    }
 }])
