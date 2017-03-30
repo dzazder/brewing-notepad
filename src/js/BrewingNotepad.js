@@ -6,13 +6,25 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function ($s
             id: 1,
             label: "Main page",
             src: "main.html",
-            showInMenu: true
+            showInMenu: 'home'
         },
         {
             id: 2,
             label: "Yours batches",
             src: "batches.html",
-            showInMenu: true
+            showInMenu: 'home'
+        },
+        {
+            id: 3,
+            label: "IBU Calculator",
+            src: "calcibu.html",
+            showInMenu: 'calculators'
+        },
+        {
+            id: 4,
+            label: "Alcohol calculator",
+            src: "calcvolume.html",
+            showInMenu: 'calculators'
         },
         {
             id: 21,

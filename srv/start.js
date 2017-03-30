@@ -15,6 +15,8 @@ app.use("/js", express.static(path.join(__dirname, "../src/js")));
 app.use("/content", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
 app.use("/content", express.static(path.join(__dirname, "../src/content")));
 
+app.use("/fonts", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/fonts")));
+
 app.use("/templates", express.static(path.join(__dirname, "../src/templates")));
 
 

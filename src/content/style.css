@@ -1,3 +1,73 @@
+html, body {
+    font-family: 'Asap', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+/* LEFT MENU container */
+.left-col {
+    background-color: #2A3F54;
+    color: #ECF0F1;
+    height: 100%;
+}
+
+.left-menu .title {
+    font-size: 20px;
+    margin: 15px 5px 30px 10px;
+}
+
+.left-menu a {
+    color: #e7e7e7;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.left-menu .menu-home .menu-panel {
+    border-right: 5px solid #E9D758;
+}
+
+.left-menu .menu-calculators .menu-panel {
+    border-right: 5px solid #FF8552;
+    /* 297373 FF8552 E6E6E6 39393A */
+}
+
+
+.left-col .menu-panel-heading {
+    padding: 10px;
+    border-top: 1px solid #5F7388;
+    border-bottom: 1px solid #1A3147;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.left-col .menu-panel-heading .sh-arrow {
+    float: right;
+    margin: 5px 10px 0 0;
+    font-size: 10px;
+}
+
+.left-col .menu-list-group-item {
+    padding: 10px 5px 10px 25px;
+    cursor: pointer;
+}
+
+.left-col .menu-list-group-item:last-child {
+    border-bottom: 1px solid #1A3147;
+}
+
+.left-col .menu-list-group-item:active, 
+.left-col .menu-list-group-item:hover, 
+.left-col .menu-list-group-item:focus,
+.left-col .menu-list-group-item.selected {
+    background-color: #374A5E;
+    color: #fff;
+}
+
+.left-col .menu-panel-body {
+    display: none;
+}
+/* END of left menu container */
+
 .batch-container {
     border: 1px solid red;
 }
