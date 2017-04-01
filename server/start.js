@@ -28,18 +28,18 @@ app.use("/js", express.static(path.join(__dirname, "../node_modules/bootstrap/di
 app.use("/js", express.static(path.join(__dirname, "../node_modules/jquery/dist")));
 app.use("/js", express.static(path.join(__dirname, "../node_modules/angular")));
 app.use("/js", express.static(path.join(__dirname, "../node_modules/chart.js/dist")));
-app.use("/js", express.static(path.join(__dirname, "../src/js")));
+app.use("/js", express.static(path.join(__dirname, "../client/js")));
 
 app.use("/content", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
-app.use("/content", express.static(path.join(__dirname, "../src/content")));
+app.use("/content", express.static(path.join(__dirname, "../client/content")));
 
 app.use("/fonts", express.static(path.join(__dirname, "../node_modules/bootstrap/dist/fonts")));
 
-app.use("/templates", express.static(path.join(__dirname, "../src/templates")));
+app.use("/templates", express.static(path.join(__dirname, "../client/views/templates")));
 
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../src/index.html'));
+    res.sendFile(path.join(__dirname, '../client/views/index.html'));
 });
 
 app.listen(port, function(err) {
