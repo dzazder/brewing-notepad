@@ -1,6 +1,9 @@
 var brewingNotepadApp = angular.module('brewingNotepadApp', []);
 
-brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function ($scope) {
+brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', function ($scope, $http) {
+    
+
+
     $scope.menu = [
         {
             id: 1,
@@ -98,7 +101,7 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', function ($s
         }
     }
 
-    
+
     // test data
     $scope.currentPage = 2;
 }])
