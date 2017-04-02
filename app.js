@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var open = require('open');
 
-//var index = require('./routes/index');
-//var users = require('./routes/users');
+var index = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -23,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', index);
-//app.use('/users', users);
+app.use('/', index);
+app.use('/users', users);
 
 
 app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
@@ -57,6 +57,28 @@ app.use("/templates", express.static(path.join(__dirname, "views/templates")));
 //   res.status(err.status || 500);
 //   res.render('error');
 // });
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status( err.code || 500 )
+    .json({
+      status: 'error',
+      message: err
+    });
+  });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500)
+  .json({
+    status: 'error',
+    message: err.message
+  });
+});
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, './views/index.html'));
