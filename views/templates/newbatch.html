@@ -1,0 +1,38 @@
+<h2>Add new batch</h2>
+
+<form>
+    <div class="form-inline form-group">
+        <label for="batchBrewingDate">Batch name</label>
+        <input id="batchBrewingDate" type="text" class="form-control" value="{{brewery.newBatch.name}}">
+    </div>
+    <div class="form-inline form-group">
+        <label for="batchBrewingDate">Beer style</label>
+        <input id="batchBrewingDate" type="text" class="form-control" value="{{brewery.newBatch.style}}">
+    </div>
+    <div class="form-inline form-group">
+        <label for="batchBrewingDate">Brewing date</label>
+        <input id="batchBrewingDate" type="date" class="form-control" value="{{brewery.newBatch.brewingDate}}">
+    </div>
+    <div class="form-inline form-group">
+        <label for="batchBottlingDate">Bottling date</label>
+        <input id="batchBottlingDate" type="date" class="form-control" value="{{brewery.newBatch.bottlingDate}}">
+    </div>
+    <div class="form-inline form-group">
+        <label for="batchOG">Original gravity</label>
+        <input id="batchOG" type="number" class="form-control" value="{{brewery.newBatch.blg}}">
+    </div>
+    <div class="form-inline form-group">
+        <label for="batchFG">Final gravity</label>
+        <input id="batchFG" type="number" class="form-control" value="{{brewery.newBatch.fg}}">
+    </div>
+    <div class="form-inline form-group">
+        <label for="batchFG">Volume</label>
+        <input id="batchFG" type="number" class="form-control" value="{{brewery.newBatch.vol}}">
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-danger" ng-click="changePage(2)">Cancel</button>
+        </div>
+    </div>
+</form>

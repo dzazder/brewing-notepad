@@ -1,7 +1,15 @@
 <h2>Your batches</h2>
 
-<ul ng-repeat="batch in brewery.batches">
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-success" ng-click="changePage(22)">New batch</button>
+    </div>
+</div>
+
+<ul ng-repeat="batch in brewery.batches" ng-hide="!brewery.batches || brewery.batches.length === 0">
     <li>
         <a href="#" ng-click="changePage(21, batch.id)">{{batch.name}}</a>
     </li>
 </ul>
+
+<span class="warning" ng-hide="brewery.batches">You don't have any batches. Let's brew!</span>

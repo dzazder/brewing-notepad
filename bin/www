@@ -90,4 +90,4 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-open('http://localhost:' + port);
+//open('http://localhost:' + port);

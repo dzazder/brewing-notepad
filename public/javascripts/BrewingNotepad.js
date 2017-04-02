@@ -1,7 +1,7 @@
 var brewingNotepadApp = angular.module('brewingNotepadApp', []);
 
 brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', function ($scope, $http) {
-    
+
 
 
     $scope.menu = [
@@ -33,9 +33,13 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', fun
             id: 21,
             label: "Batch",
             src: "batch.html",
+        },
+        {
+            id: 22,
+            label: "New batch",
+            src: "newbatch.html"
         }
     ];
-
 
     $scope.changePage = function (id, idInternal) {
         $scope.currentPage = id;
@@ -61,33 +65,44 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', fun
     }
 
     $scope.brewery = {}
-    $scope.brewery.batches = [
-        {
-            id: 1,
-            name: "English breakfast",
-            styleId: 1,
-            styleName: "English Pale Ale",
-            og: 12,
-            fg: 4,
-            brewingDate: '2016-01-01',
-            bottlingDate: '2016-01-21'
+    $scope.brewery.batches = [];
 
-        },
-        {
-            id: 2,
-            name: "Tropical Joke",
-            styleId: 2,
-            styleName: "American Pale Ale",
-            blg: 14
-        },
-        {
-            id: 3,
-            name: "Great Ivan",
-            styleId: 3,
-            styleName: "Russian Imperial Stout",
-            blg: 24
-        }
-    ]
+    $http.get('/api/batches')
+        .then(function (data) {
+            $scope.brewery.batches = data.data.data;
+            console.log(data);
+        }, function (error) {
+            console.log('Error: ' + error);
+        });
+
+    
+
+    //     {
+    //         id: 1,
+    //         name: "English breakfast",
+    //         styleId: 1,
+    //         styleName: "English Pale Ale",
+    //         og: 12,
+    //         fg: 4,
+    //         brewingDate: '2016-01-01',
+    //         bottlingDate: '2016-01-21'
+
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "Tropical Joke",
+    //         styleId: 2,
+    //         styleName: "American Pale Ale",
+    //         blg: 14
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "Great Ivan",
+    //         styleId: 3,
+    //         styleName: "Russian Imperial Stout",
+    //         blg: 24
+    //     }
+    // ]
 
     $scope.breweryPage = {};
     $scope.breweryPage.currentBatch = 1;
