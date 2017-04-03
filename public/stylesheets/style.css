@@ -67,6 +67,30 @@ html, body {
     display: none;
 }
 /* END of left menu container */
+.top-row {
+    background-color: #EDEDED;
+    border-bottom: 1px solid #D9DEE4;
+    height: 50px;
+}
+
+.top-nav, .top-nav ul {
+    height: 100%;
+    float: right;
+}
+
+.top-nav ul li {
+    line-height: 50px;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.top-nav ul li:hover {
+    background-color: #D9DEE4;
+}
+
+.login-menu {
+    margin-top:50px;
+}
 
 .batch-container {
     border: 1px solid red;

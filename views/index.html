@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Brewing notepad</title>
-    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
     <link href="/fonts/glyphicons-halflings-regular.eot" rel="stylesheet">
     <link href="/fonts/glyphicons-halflings-regular.svg" rel="stylesheet">
     <link href="/fonts/glyphicons-halflings-regular.ttf" rel="stylesheet">
@@ -34,7 +34,26 @@
     <div class="col-md-2 left-col" ng-include="'/templates/leftcolmenu.html'">
     </div>
 
-    <div class="col-md-10 right-col" ng-include="'/templates/maincontent.html'">
+    <div class="col-md-10 right-col">
+        <div class="row top-row">
+            <div class="top-nav">
+                <ul class="list-inline">
+                    <li ng-click="isOpenLoginMenu = !isOpenLoginMenu">Login
+                        <ul ng-hide="!isOpenLoginMenu" class="login-menu">
+                            <li ng-hide="!user.auth">Profile</li>
+                            <li ng-hide="!user.auth">Settings</li>
+                            <li ng-hide="!user.auth">Log out</li>
+                            <li ng-hide="user.auth">Log in</li>
+                            <li ng-hide="user.auth">Register</li>
+                            </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" ng-include="'/templates/maincontent.html'">
+        </div>
     </div>
 </body>
 

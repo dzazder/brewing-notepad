@@ -2,6 +2,7 @@ var brewingNotepadApp = angular.module('brewingNotepadApp', []);
 
 brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', function ($scope, $http) {
 
+// Pages
     $http.get('/api/pages')
         .then(function (data) {
             $scope.menu = data.data.data;
@@ -9,44 +10,6 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', fun
         }, function (error) {
             console.log('Error: ' + error);
         });
-
-
-    // $scope.menu = [
-    //     {
-    //         id: 1,
-    //         label: "Main page",
-    //         src: "main.html",
-    //         showInMenu: 'home'
-    //     },
-    //     {
-    //         id: 2,
-    //         label: "Yours batches",
-    //         src: "batches.html",
-    //         showInMenu: 'home'
-    //     },
-    //     {
-    //         id: 3,
-    //         label: "IBU Calculator",
-    //         src: "calcibu.html",
-    //         showInMenu: 'calculators'
-    //     },
-    //     {
-    //         id: 4,
-    //         label: "Alcohol calculator",
-    //         src: "calcvolume.html",
-    //         showInMenu: 'calculators'
-    //     },
-    //     {
-    //         id: 21,
-    //         label: "Batch",
-    //         src: "batch.html",
-    //     },
-    //     {
-    //         id: 22,
-    //         label: "New batch",
-    //         src: "newbatch.html"
-    //     }
-    // ];
 
     $scope.changePage = function (id, idInternal) {
         $scope.currentPage = id;
@@ -71,6 +34,11 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', fun
         return "main.html";
     }
 
+// Login/Register
+    $scope.user = {};
+    $scope.isOpenLoginMenu = false;
+
+// Brewery
     $scope.brewery = {}
     $scope.brewery.batches = [];
 
