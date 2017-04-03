@@ -2,44 +2,51 @@ var brewingNotepadApp = angular.module('brewingNotepadApp', []);
 
 brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', function ($scope, $http) {
 
+    $http.get('/api/pages')
+        .then(function (data) {
+            $scope.menu = data.data.data;
+            console.log(data);
+        }, function (error) {
+            console.log('Error: ' + error);
+        });
 
 
-    $scope.menu = [
-        {
-            id: 1,
-            label: "Main page",
-            src: "main.html",
-            showInMenu: 'home'
-        },
-        {
-            id: 2,
-            label: "Yours batches",
-            src: "batches.html",
-            showInMenu: 'home'
-        },
-        {
-            id: 3,
-            label: "IBU Calculator",
-            src: "calcibu.html",
-            showInMenu: 'calculators'
-        },
-        {
-            id: 4,
-            label: "Alcohol calculator",
-            src: "calcvolume.html",
-            showInMenu: 'calculators'
-        },
-        {
-            id: 21,
-            label: "Batch",
-            src: "batch.html",
-        },
-        {
-            id: 22,
-            label: "New batch",
-            src: "newbatch.html"
-        }
-    ];
+    // $scope.menu = [
+    //     {
+    //         id: 1,
+    //         label: "Main page",
+    //         src: "main.html",
+    //         showInMenu: 'home'
+    //     },
+    //     {
+    //         id: 2,
+    //         label: "Yours batches",
+    //         src: "batches.html",
+    //         showInMenu: 'home'
+    //     },
+    //     {
+    //         id: 3,
+    //         label: "IBU Calculator",
+    //         src: "calcibu.html",
+    //         showInMenu: 'calculators'
+    //     },
+    //     {
+    //         id: 4,
+    //         label: "Alcohol calculator",
+    //         src: "calcvolume.html",
+    //         showInMenu: 'calculators'
+    //     },
+    //     {
+    //         id: 21,
+    //         label: "Batch",
+    //         src: "batch.html",
+    //     },
+    //     {
+    //         id: 22,
+    //         label: "New batch",
+    //         src: "newbatch.html"
+    //     }
+    // ];
 
     $scope.changePage = function (id, idInternal) {
         $scope.currentPage = id;
@@ -74,36 +81,7 @@ brewingNotepadApp.controller('BrewingNotepadController', ['$scope', '$http', fun
         }, function (error) {
             console.log('Error: ' + error);
         });
-
-    
-
-    //     {
-    //         id: 1,
-    //         name: "English breakfast",
-    //         styleId: 1,
-    //         styleName: "English Pale Ale",
-    //         og: 12,
-    //         fg: 4,
-    //         brewingDate: '2016-01-01',
-    //         bottlingDate: '2016-01-21'
-
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "Tropical Joke",
-    //         styleId: 2,
-    //         styleName: "American Pale Ale",
-    //         blg: 14
-    //     },
-    //     {
-    //         id: 3,
-    //         name: "Great Ivan",
-    //         styleId: 3,
-    //         styleName: "Russian Imperial Stout",
-    //         blg: 24
-    //     }
-    // ]
-
+        
     $scope.breweryPage = {};
     $scope.breweryPage.currentBatch = 1;
 

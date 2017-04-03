@@ -16,7 +16,8 @@ module.exports = {
   getSingleBatch: getSingleBatch,
   createBatch: createBatch,
   updateBatch: updateBatch,
-  removeBatch: removeBatch
+  removeBatch: removeBatch,
+  getAllPages: getAllPages
 };
 
 function getAllBatches(req, res, next) {
@@ -95,6 +96,21 @@ function removeBatch(req, res, next) {
           message: `Removed ${result.rowCount} batches`
         });
       /* jshint ignore:end */
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+}
+
+function getAllPages(req, res, next) {
+   db.any('select * from pages')
+    .then(function (data) {
+      res.status(200)
+        .json({
+          status: 'success',
+          data: data,
+          message: 'Retrieved ALL pages'
+        });
     })
     .catch(function (err) {
       return next(err);

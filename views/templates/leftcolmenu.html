@@ -3,15 +3,15 @@
         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>BrewingNotepad
     </div>
 
-    <div class="row menu-home">
+    <div class="row menu" ng-repeat="page in menu | filter: {parent: -1} | filter: {showinmenu: true}">
         <div class="menu-panel">
             <div class="menu-panel-heading" onclick="toggleMenuPanel(this)">
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+                <span class="glyphicon glyphicon-home" aria-hidden="true" ng-click="changePage(page.id)"></span> {{page.label}}
                 <span class="sh-arrow glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
             </div>
             <div class="menu-panel-body">
                 <div class="list-group">
-                    <div ng-repeat="item in menu | filter: { showInMenu: 'home' }" ng-click="changePage(item.id)" ng-href="#" class="menu-list-group-item"
+                    <div ng-repeat="item in menu | filter: { parent: page.id } | filter: {showinmenu: true}" ng-click="changePage(item.id)" ng-href="#" class="menu-list-group-item"
                         ng-class="{selected: item.id == currentPage}">
                         <div>{{item.label}}</div>
                     </div>
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-
+<!--
     <div class="row menu-calculators">
         <div class="menu-panel">
             <div class="menu-panel-heading" onclick="toggleMenuPanel(this)">
@@ -35,5 +35,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>

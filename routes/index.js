@@ -14,4 +14,6 @@ router.post('/api/batches', db.createBatch);
 router.put('/api/batches/:id', db.updateBatch);
 router.delete('/api/batches/:id', db.removeBatch);
 
+router.get('/api/pages', db.getAllPages);
+
 module.exports = router;
